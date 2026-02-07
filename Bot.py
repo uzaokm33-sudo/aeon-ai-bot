@@ -11,11 +11,11 @@ def start(m):
 @bot.message_handler(commands=['draw'])
 def draw(m):
     p = m.text.replace('/draw', '').strip().replace(' ', '%20')
-    if p: bot.send_message(m.chat.id, f"🎨 Результат:\nhttps://image.pollinations.ai{p}")
+    if p: bot.send_message(m.chat.id, f"🎨 Результат:\nhttps://image.pollinations.ai/{p}")
 
 @bot.message_handler(commands=['video'])
 def video(m):
     p = m.text.replace('/video', '').strip().replace(' ', '%20')
-    if p: bot.send_message(m.chat.id, f"🎬 Видео генерируется:\nhttps://image.pollinations.ai{p}?model=video")
+    if p: bot.send_message(m.chat.id, f"🎬 Видео генерируется:\nhttps://image.pollinations.ai/{p}?model=video")
 
 bot.polling(none_stop=True)
